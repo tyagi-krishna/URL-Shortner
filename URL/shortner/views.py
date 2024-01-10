@@ -7,15 +7,15 @@ import string
 def home(request):
     if request.method == 'POST':
         characters = string.ascii_letters + string.digits
-        random_string = ''.join(random.choice(characters) for _ in range(20))
+        random_string = ''.join(random.choice(characters) for _ in range(10))
         base_url = 'http://127.0.0.1:8000/short/'
         new_url = Urls.objects.create(url = request.POST['url_input'], shortenedURL=random_string)
         URL = base_url + random_string +'/'
         new_url.save()
-        return render(request, 'home.html', {'msg': f"The Shortened URL is {URL}"})
+        return render(request, 'home.html', {'msg': "The Shortened URL is ", 'url': URL})
     
     else:
-        return render(request, 'home.html', {'msg': " "})
+        return render(request, 'home.html', {'msg': " ", 'url': ' '})
 
 def match(request, url):
     try:
@@ -24,4 +24,4 @@ def match(request, url):
         return redirect(URL)
     
     except:
-        return render(request, 'home.html', {'msg' : "No URL found, please generate one to use."})
+        return render(request, 'home.html', {'msg' : "No URL found, please generate one to use.", 'url': ' '})
