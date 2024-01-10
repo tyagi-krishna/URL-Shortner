@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>URL Shortner - HOME</title>
+	</head>
+	<body>
+		<h2>Enter a URL:</h2>
+
+		<h1>{{msg}}</h1>
+        </br>
+
+		<form action="" method="post">
+			{% csrf_token %}
+			<!-- Include this line for security, required in Django templates -->
+
+			<label for="url_input">URL:</label>
+			<input type="url" id="url_input" name="url_input" required />
+
+			<br />
+
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>
