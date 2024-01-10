@@ -6,20 +6,14 @@
 		<title>URL Shortner - HOME</title>
 	</head>
 	<body>
-		<h2>Enter a URL:</h2>
-
-		<h1>{{msg}}</h1>
+        <h1>{{msg}}</h1>
         </br>
-
+		<h2>Enter a URL:</h2>
 		<form action="" method="post">
 			{% csrf_token %}
-			<!-- Include this line for security, required in Django templates -->
-
 			<label for="url_input">URL:</label>
 			<input type="url" id="url_input" name="url_input" required />
-
 			<br />
-
 			<input type="submit" value="Submit" />
 		</form>
 	</body>

@@ -1,2 +1,3 @@
 # URL-Shortner
-URL shortner with Django and MySQL
+
+URL shortner with Django.
